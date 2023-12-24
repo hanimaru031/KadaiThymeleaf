@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Thymeleaf課題</title>
+    <title th:text="#{content.title}"></title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
-    <h2>出力画面</h2>
+    <h1 th:text="#{content.title}"></h1>
+    <p th:text="#{content.ouput_sub_title}"></p>
     <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
-    <p><a th:href="@{/input?previous={val}(val=${val})}">入力画面に戻る</a></p>
+    <a th:href="@{/input?previous={val}(val=${val})}" th:text="#{content.output_return}"></a>
+
 </body>
 </html>
